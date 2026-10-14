@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Espace client — GOLDSAM</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../espace-client/espace.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="logo" href="../index.html#accueil"><img src="../assets/logo_goldsam_nav_white.png" alt="GOLDSAM" width="133" height="30"></a>
+<a class="asg" href="https://asgroup-fr.com" rel="noopener" aria-label="Membre d’AS Group"><img src="../assets/logo_as_group.png" alt="" width="44" height="27"><span>Membre<br>d’AS Group</span></a>
+<button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Ouvrir le menu</button>
+<nav class="main" id="nav" aria-label="Navigation principale">
+<a href="../index.html#services">Services</a><a href="../index.html#methode">Méthode</a><a href="../index.html#apropos">À propos</a><a href="../index.html#faq">FAQ</a>
+<a class="ec" href="../espace-client/index.html" aria-current="page">Espace client</a>
+<a class="btn" href="../index.html#contact">Parlons de votre projet ↗</a>
+</nav></div></header>
+<main id="contenu">
+<section class="login" id="login"><div class="box">
+<span class="eyebrow">Espace client</span>
+<h1>Retrouvez votre courrier et vos documents.</h1>
+<p class="s">Clients de GOLDSAM : consultez le courrier reçu à votre adresse de domiciliation, vos documents, le suivi de votre secrétariat et vos échanges avec nous.</p>
+<form id="lf" novalidate>
+<label>Adresse e-mail<input id="le" type="email" autocomplete="username" required></label>
+<label>Mot de passe<input id="lp" type="password" autocomplete="current-password" required></label>
+<button class="btn" type="submit" id="lb">Se connecter</button>
+<p class="fine" id="lmsg" role="status">Première connexion ou mot de passe oublié : écrivez à <a href="mailto:contact@goldsam.fr">contact@goldsam.fr</a>, nous vous transmettons un accès.</p>
+</form></div></section>
+<section class="app" id="app">
+<aside class="side" aria-label="Espace client">
+<div class="who"><b id="cn">…</b><span id="cu"></span></div>
+<button class="t on" data-v="accueil">Tableau de bord</button>
+<button class="t" data-v="courrier">Courrier reçu <span class="n" id="nbNew">0</span></button>
+<button class="t" data-v="docs">Documents</button>
+<button class="t" data-v="sec" id="tabSec" hidden>Secrétariat</button>
+<button class="t" data-v="msg">Demandes</button>
+<button class="t" data-v="dossier">Mon dossier</button>
+<button class="out" id="out">Se déconnecter</button>
+</aside>
+<div class="main">
+<div class="view on" id="v-accueil">
+<h1 id="hello">Bonjour</h1><p class="sub">Voici l’essentiel de votre dossier GOLDSAM.</p>
+<div class="kpis"><div class="kpi"><b id="k1">0</b><span>courriers à traiter</span></div><div class="kpi"><b id="k2">0</b><span>documents disponibles</span></div><div class="kpi"><b id="k3">0</b><span id="k3l">échanges avec GOLDSAM</span></div></div>
+<div class="panel"><h2>Derniers courriers</h2><div id="lastMail"></div></div>
+<button class="sm p" data-go="courrier">Voir tout le courrier</button>
+</div>
+<div class="view" id="v-courrier">
+<h1>Courrier reçu</h1><p class="sub">Chaque courrier est enregistré à son arrivée. Demandez sa numérisation, sa réexpédition ou son retrait sur place.</p>
+<div class="filters" id="flt"><button class="on" data-f="all">Tous</button><button data-f="new">À traiter</button><button data-f="done">Suivis</button></div>
+<div class="panel" id="mailList"></div>
+</div>
+<div class="view" id="v-docs"><h1>Documents</h1><p class="sub">Contrat, attestations et factures liés à votre dossier.</p><div class="panel" id="docList"></div></div>
+<div class="view" id="v-sec"><h1>Secrétariat</h1><p class="sub">Suivi des démarches et dossiers que nous traitons pour vous.</p>
+<div class="panel"><h2>Suivi des tâches</h2><div id="taskList"></div></div>
+<div class="panel"><h2>Documents du secrétariat</h2><div id="secDocs"></div></div></div>
+<div class="view" id="v-msg"><h1>Demandes</h1><p class="sub">Une question sur votre courrier ou votre dossier ? Écrivez à l’équipe GOLDSAM.</p>
+<div class="panel"><h2>Nouvelle demande</h2>
+<form class="cform" id="mf"><label>Sujet<select id="ms"><option>Courrier</option><option>Documents</option><option>Secrétariat</option><option>Facturation</option><option>Autre demande</option></select></label>
+<label>Message<textarea id="mt" required maxlength="5000"></textarea></label><div><button class="sm p" type="submit">Envoyer la demande</button></div></form></div>
+<div class="panel"><h2>Vos échanges</h2><div id="thr"></div></div></div>
+<div class="view" id="v-dossier"><h1>Mon dossier</h1><p class="sub">Informations de votre dossier chez GOLDSAM.</p>
+<div class="panel"><h2>Société</h2><div class="dg" id="dg"></div></div>
+<div class="panel"><h2>Prochaines échéances</h2><div id="dl"></div></div>
+<div class="panel"><h2>Mot de passe</h2><form class="cform" id="pf"><label>Nouveau mot de passe (8 caractères minimum)<input id="np" type="password" autocomplete="new-password" minlength="8" required></label><div><button class="sm p" type="submit">Changer mon mot de passe</button></div></form></div>
+<p class="sub">Agrément préfectoral n° 2026 / 010, mentionné au contrat de domiciliation.</p></div>
+</div></section>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt1"><div class="c"><h3 id="mt1"></h3><div id="mb"></div><div style="margin-top:14px;text-align:right"><button class="sm p" id="mc">Fermer</button></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+<footer><div class="wrap">
+<div class="r"><div><b class="n">GOLDSAM</b><p>L’accompagnement qui fait avancer votre entreprise.</p></div>
+<nav><a href="../mentions-legales.html">Mentions légales</a><a href="../confidentialite.html">Confidentialité &amp; RGPD</a><a href="../index.html#contact">Contact</a></nav></div>
+<div class="c"><span>© 2026 GOLDSAM · Sophia Antipolis</span><a class="asf" href="https://asgroup-fr.com" rel="noopener" aria-label="AS Group"><span>GOLDSAM fait partie de l’écosystème</span><img src="../assets/logo_as_group.png" alt="AS Group" width="34" height="21"></a></div>
+</div></footer>
+<script src="../app.js"></script>
+<script src="../espace-client/vendor/supabase.js"></script>
+<script src="../espace-client/config.js"></script>
+<script src="../espace-client/portal.js"></script>
+<script src="client.js"></script>
+</body></html>
